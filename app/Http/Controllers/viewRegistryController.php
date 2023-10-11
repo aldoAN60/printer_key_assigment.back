@@ -8,8 +8,7 @@ use Illuminate\Http\Request;
 class viewRegistryController extends Controller
 {
     public function getRegistry(){
-        $registry = view_registry::all();
-        return response()->json($registry);
-        
+        $registry = view_registry::orderBy('id_registry','asc')->get();
+        return response()->json($registry); 
     }
 }
